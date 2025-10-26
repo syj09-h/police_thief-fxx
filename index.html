@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>경찰과 도둑 — Score Mode</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <h1>경찰과 도둑 — Score Mode</h1>
+      <div class="controls">
+        <label class="tiny">모드</label>
+        <select id="mode">
+          <option value="single">싱글플레이어 (경찰 조작)</option>
+          <option value="duo">2인 플레이 (경찰: 화살표, 도둑: WASD)</option>
+        </select>
+        <label class="tiny">난이도</label>
+        <select id="difficulty">
+          <option value="easy">쉬움</option>
+          <option value="normal" selected>보통</option>
+          <option value="hard">어려움</option>
+        </select>
+        <button id="restart">라운드 재시작</button>
+      </div>
+    </header>
+
+    <main>
+      <canvas id="game" width="800" height="560"></canvas>
+
+      <aside class="hud">
+        <div class="panel">
+          <div class="stat"><div>타이머</div><div id="timer" class="big">01:00</div></div>
+          <div class="stat"><div>라운드 상태</div><div id="status" class="big">준비</div></div>
+        </div>
+
+        <div class="panel">
+          <div class="stat"><div>경찰 점수</div><div id="copScore" class="big">0</div></div>
+          <div class="stat"><div>도둑 점수</div><div id="thiefScore" class="big">0</div></div>
+        </div>
+
+        <div class="panel">
+          <div class="tiny">조작법</div>
+          <ul class="tiny">
+            <li>경찰: 화살표 ←↑→↓</li>
+            <li>도둑 (2인 모드): W A S D</li>
+            <li>모바일: 화면을 누르고 드래그하여 경찰 이동</li>
+          </ul>
+        </div>
+
+        <div class="panel">
+          <div class="tiny">게임 규칙</div>
+          <div class="tiny">도둑이 코인을 먹으면 +10점, 라운드 종료(시간 경과)시 도둑 +20점. 경찰이 도둑을 태그하면 경찰 +1점(캡쳐) 및 라운드 종료.</div>
+        </div>
+      </aside>
+    </main>
+
+    <footer>만든이: ChatGPT — VSCode에서 세 파일을 같은 폴더에 저장하고 index.html을 열어 실행하세요.</footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
